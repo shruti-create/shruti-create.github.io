@@ -1,9 +1,10 @@
-import React from 'react'
+import { useState } from 'react'
 import { leadership, skills } from '../data'
 
 const columbiaCoursework = [
-  'Advanced Algorithms', 'Operating Systems', 'Compilers', 'Databases',
-  'Statistical NLP', 'Machine Learning', 'Software Engineering'
+  'Programming Languages and Translators', 'Algorithms', 'Projects in Computer Science',
+  'Topics in Software Engineering', 'Artificial Intelligence', 'UI',
+  'Ethical and Responsible AI', 'Introduction to Databases', 'Professional Development & Leadership'
 ]
 
 const ucsCoursework = [
@@ -13,54 +14,77 @@ const ucsCoursework = [
 ]
 
 export default function Education() {
+  const [cwOpen, setCwOpen] = useState({ columbia: false, ucsd: false })
+  const toggleCw = (key) => setCwOpen(prev => ({ ...prev, [key]: !prev[key] }))
+
   return (
     <main className="page-wrap">
       <h1 className="page-heading">Education</h1>
       <p className="page-desc">Degrees, honors, leadership, and technical skills.</p>
       <div className="page-divider" />
 
-      <div className="edu-entries">
-
-        <div className="edu-entry-page" style={{ paddingTop: 0 }}>
-          <div className="edu-page-header">
-            <span className="edu-page-school">Columbia University</span>
-            <span className="edu-page-date">Expected December 2026</span>
+      {/* Columbia */}
+      <div className="school-card">
+        <div className="school-card-accent" style={{ background: 'var(--navy)' }} />
+        <div className="school-card-header">
+          <div>
+            <div className="school-card-name">Columbia University</div>
+            <div className="school-card-location">New York, NY</div>
+            <div className="school-card-period">Expected December 2026</div>
           </div>
-          <p className="edu-page-degree">
+        </div>
+        <div className="school-card-body">
+          <div className="school-degree-row">
             <strong>Master of Science</strong> · Computer Science: Software Systems Specialization
-          </p>
-          <p className="edu-page-notes">New York, NY</p>
-          <div className="coursework-block">
-            <span className="coursework-label">Coursework</span>
-            <div className="coursework-pills">
-              {columbiaCoursework.map(c => <span key={c} className="coursework-pill">{c}</span>)}
+          </div>
+          <div className="coursework-block" style={{ marginTop: '1.1rem' }}>
+            <button className="cw-toggle" onClick={() => toggleCw('columbia')}>
+              <span>Coursework</span>
+              <span className={`cw-chevron${cwOpen.columbia ? ' open' : ''}`}>▶</span>
+              <span className="cw-count">({columbiaCoursework.length})</span>
+            </button>
+            <div className={`cw-pills-wrap${cwOpen.columbia ? ' open' : ' closed'}`}>
+              <div className="coursework-pills" style={{ marginTop: '0.6rem' }}>
+                {columbiaCoursework.map(c => <span key={c} className="coursework-pill">{c}</span>)}
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="edu-entry-page">
-          <div className="edu-page-header">
-            <span className="edu-page-school">University of California, San Diego</span>
-            <span className="edu-page-date">September 2022 – June 2025</span>
+      {/* UCSD */}
+      <div className="school-card">
+        <div className="school-card-accent" style={{ background: '#C69214' }} />
+        <div className="school-card-header">
+          <div>
+            <div className="school-card-name">UC San Diego</div>
+            <div className="school-card-location">La Jolla, CA</div>
+            <div className="school-card-period">September 2022 – June 2025</div>
           </div>
-          <p className="edu-page-degree">
+        </div>
+        <div className="school-card-body">
+          <div className="school-degree-row">
             <strong>Bachelor of Science</strong> · Computer Engineering: <strong>ECE Honors with Distinction</strong>
-          </p>
-          <p className="edu-page-degree">
-            <strong>Bachelor of Arts</strong> · Individual Studies: Artificial Intelligence
-          </p>
-          <p className="edu-page-degree">
+          </div>
+          <div className="school-degree-row">
+            <strong>Bachelor of Arts</strong> · IS: Artificial Intelligence
+          </div>
+          <div className="school-degree-row">
             Minor in Cognitive Science &nbsp;·&nbsp; <strong>NAE Grand Challenges Scholar</strong> &nbsp;·&nbsp; <strong>IEEE Eta Kappa Nu</strong>
-          </p>
-          <p className="edu-page-notes">La Jolla, CA</p>
-          <div className="coursework-block">
-            <span className="coursework-label">Coursework</span>
-            <div className="coursework-pills">
-              {ucsCoursework.map(c => <span key={c} className="coursework-pill">{c}</span>)}
+          </div>
+          <div className="coursework-block" style={{ marginTop: '1.1rem' }}>
+            <button className="cw-toggle" onClick={() => toggleCw('ucsd')}>
+              <span>Coursework</span>
+              <span className={`cw-chevron${cwOpen.ucsd ? ' open' : ''}`}>▶</span>
+              <span className="cw-count">({ucsCoursework.length})</span>
+            </button>
+            <div className={`cw-pills-wrap${cwOpen.ucsd ? ' open' : ' closed'}`}>
+              <div className="coursework-pills" style={{ marginTop: '0.6rem' }}>
+                {ucsCoursework.map(c => <span key={c} className="coursework-pill">{c}</span>)}
+              </div>
             </div>
           </div>
         </div>
-
       </div>
 
       <div className="inner-section">
@@ -135,7 +159,6 @@ export default function Education() {
           </div>
         </div>
       </div>
-
     </main>
   )
 }

@@ -1,20 +1,9 @@
-import React from 'react'
+import { useState } from 'react'
 import { experience } from '../data'
 
-function groupByCompany(entries) {
-  return entries.reduce((groups, exp) => {
-    const last = groups[groups.length - 1]
-    if (last && last.company === exp.company) {
-      last.roles.push(exp)
-    } else {
-      groups.push({ company: exp.company, roles: [exp] })
-    }
-    return groups
-  }, [])
-}
-
 export default function Experience() {
-  const grouped = groupByCompany(experience)
+  const [expanded, setExpanded] = useState({})
+  const toggle = (i) => setExpanded(prev => ({ ...prev, [i]: !prev[i] }))
 
   return (
     <main className="page-wrap">
@@ -22,31 +11,47 @@ export default function Experience() {
       <p className="page-desc">Professional roles, research positions, and internships.</p>
       <div className="page-divider" />
 
-      {grouped.map((group, gi) => (
-        <div key={gi} className="exp-group">
-          <div className="exp-company-bar">
-            <span className="exp-company-name">{group.company}</span>
-            <div className="exp-company-rule" />
-          </div>
-
-          {group.roles.map((role, ri) => (
-            <div key={ri} className="exp-role">
-              <div className="exp-role-meta">
-                <div>
-                  <span className="exp-role-title">{role.role}</span>
-                  {role.location && (
-                    <span className="exp-role-location"> &nbsp;·&nbsp; {role.location}</span>
-                  )}
+      <div className="exp-timeline">
+        {experience.map((role, i) => (
+          <div key={i} className="exp-tl-item">
+            <div
+              className="exp-tl-dot"
+              style={{ background: role.color || 'var(--blue)' }}
+            />
+            <div className="exp-tl-card">
+              <div className="exp-tl-accent" style={{ background: role.color || 'var(--blue)' }} />
+              <div className="exp-tl-body">
+                {i === 0 && (
+                  <div className="exp-latest-badge">
+                    <span className="exp-latest-dot" />
+                    Most Recent
+                  </div>
+                )}
+                <div className="exp-tl-header">
+                  <div>
+                    <div className="exp-tl-company">{role.company}</div>
+                    <div className="exp-tl-role">{role.role}</div>
+                    {role.location && <div className="exp-tl-meta">{role.location}</div>}
+                  </div>
+                  <div className="exp-tl-period">{role.period}</div>
                 </div>
-                <span className="exp-period">{role.period}</span>
+                <ul className="exp-tl-bullets">
+                  {(expanded[i] ? role.highlights : role.highlights.slice(0, 1)).map((h, hi) => (
+                    <li key={hi}>{h}</li>
+                  ))}
+                </ul>
               </div>
-              <ul className="exp-bullets">
-                {role.highlights.map((h, i) => <li key={i}>{h}</li>)}
-              </ul>
+              {role.highlights.length > 1 && (
+                <button className="exp-tl-expand" onClick={() => toggle(i)}>
+                  {expanded[i]
+                    ? '↑ Show less'
+                    : `▾ ${role.highlights.length - 1} more detail${role.highlights.length - 1 > 1 ? 's' : ''}`}
+                </button>
+              )}
             </div>
-          ))}
-        </div>
-      ))}
+          </div>
+        ))}
+      </div>
     </main>
   )
 }

@@ -1,10 +1,19 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import * as THREE from 'three'
+
+const MENU_ITEMS = [
+  { icon: '🏠', name: 'Home',           desc: 'Overview & quick facts',   path: '/' },
+  { icon: '🎓', name: 'Education',      desc: 'Columbia · UCSD · 3.89 GPA', path: '/education' },
+  { icon: '💼', name: 'Experience',     desc: 'ServiceNow · DEVCOM · Labs', path: '/experience' },
+  { icon: '🔬', name: 'Research',       desc: 'Published · Thesis · Projects', path: '/research' },
+  { icon: '📚', name: 'Teaching',       desc: 'Head TA · 6 roles',         path: '/teaching' },
+]
 
 export default function Cafe() {
   const mountRef = useRef(null)
   const navigate = useNavigate()
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const mount = mountRef.current
@@ -297,6 +306,8 @@ export default function Cafe() {
   return (
     <div style={{ position:'fixed', inset:0, zIndex:2000, background:'#4a2200' }}>
       <div ref={mountRef} style={{ width:'100vw', height:'100vh' }} />
+
+      {/* Back button */}
       <div style={{ position:'absolute', top:'1.4rem', left:'1.4rem' }}>
         <button
           onClick={() => navigate('/')}
@@ -312,6 +323,37 @@ export default function Cafe() {
           Shruti's Dream Café
         </div>
       </div>
+
+      {/* Menu toggle */}
+      <button className="cafe-menu-toggle" onClick={() => setMenuOpen(o => !o)}>
+        {menuOpen ? '✕ Close' : '☰ Menu'}
+      </button>
+
+      {/* Menu panel */}
+      {menuOpen && (
+        <div className="cafe-menu-panel">
+          <div className="cafe-menu-header">
+            <div className="cafe-menu-title">☕ Portfolio Menu</div>
+            <div className="cafe-menu-subtitle">today's specials</div>
+          </div>
+          <div className="cafe-menu-section">
+            <span className="cafe-menu-label">Pages</span>
+            {MENU_ITEMS.map((item, i) => (
+              <button
+                key={i}
+                className="cafe-menu-item"
+                onClick={() => { navigate(item.path); setMenuOpen(false) }}
+              >
+                <span className="cafe-menu-icon">{item.icon}</span>
+                <span className="cafe-menu-info">
+                  <div className="cafe-menu-item-name">{item.name}</div>
+                  <div className="cafe-menu-item-desc">{item.desc}</div>
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
