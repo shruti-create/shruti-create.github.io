@@ -1,5 +1,3 @@
-import CafeMiniature from '../components/CafeMiniature'
-
 export default function Home() {
   return (
     <main>
@@ -70,11 +68,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-earth">
-          <p className="earth-label">Shruti's Dream</p>
-          <CafeMiniature size={100} />
-          <p className="earth-hint">click to visit</p>
-        </div>
       </section>
     </main>
   )
