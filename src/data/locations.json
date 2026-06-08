@@ -1,0 +1,286 @@
+{
+  "locations": [
+    {
+      "name": "New York, NY",
+      "lat": 40.7128, "lon": -74.006,
+      "countryId": 840, "stateId": "36",
+      "color": "#B44040", "type": "School",
+      "desc": "Columbia University — MS Computer Science (2025–2026)"
+    },
+    {
+      "name": "San Diego, CA",
+      "lat": 32.7157, "lon": -117.1611,
+      "countryId": 840, "stateId": "06",
+      "color": "#4A7C59", "type": "School & Work",
+      "desc": "UC San Diego · Lipomi Lab · Boolean Lab · ServiceNow 2024"
+    },
+    {
+      "name": "Santa Clara, CA",
+      "lat": 37.3541, "lon": -121.9552,
+      "countryId": 840, "stateId": "06",
+      "color": "#C9A96E", "type": "Work",
+      "desc": "ServiceNow HQ — SWE Intern (2025)"
+    },
+    {
+      "name": "San Jose, CA",
+      "lat": 37.3382, "lon": -121.8863,
+      "countryId": 840, "stateId": "06",
+      "color": "#B44040", "type": "Home",
+      "desc": "Home base — Bay Area, California"
+    }
+  ],
+  "extraLocations": [
+    {
+      "name": "Yosemite National Park",
+      "lat": 37.8651, "lon": -119.5383,
+      "countryId": 840, "stateId": "06",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "California"
+    },
+    {
+      "name": "Sequoia National Park",
+      "lat": 36.4864, "lon": -118.5658,
+      "countryId": 840, "stateId": "06",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "California"
+    },
+    {
+      "name": "Kings Canyon National Park",
+      "lat": 36.8879, "lon": -118.5551,
+      "countryId": 840, "stateId": "06",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "California"
+    },
+    {
+      "name": "Redwood National Park",
+      "lat": 41.2132, "lon": -124.0046,
+      "countryId": 840, "stateId": "06",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "California"
+    },
+    {
+      "name": "Joshua Tree National Park",
+      "lat": 33.8734, "lon": -115.901,
+      "countryId": 840, "stateId": "06",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "California"
+    },
+    {
+      "name": "Lassen Volcanic National Park",
+      "lat": 40.4977, "lon": -121.4207,
+      "countryId": 840, "stateId": "06",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "California"
+    },
+    {
+      "name": "Crater Lake National Park",
+      "lat": 42.9446, "lon": -122.109,
+      "countryId": 840, "stateId": "41",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "Oregon"
+    },
+    {
+      "name": "Death Valley National Park",
+      "lat": 36.5054, "lon": -117.0794,
+      "countryId": 840, "stateId": "06",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "California/Nevada"
+    },
+    {
+      "name": "Zion National Park",
+      "lat": 37.2982, "lon": -113.0263,
+      "countryId": 840, "stateId": "49",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "Utah"
+    },
+    {
+      "name": "Bryce Canyon National Park",
+      "lat": 37.593, "lon": -112.1871,
+      "countryId": 840, "stateId": "49",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "Utah"
+    },
+    {
+      "name": "Arches National Park",
+      "lat": 38.7331, "lon": -109.5925,
+      "countryId": 840, "stateId": "49",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "Utah"
+    },
+    {
+      "name": "Canyonlands National Park",
+      "lat": 38.3269, "lon": -109.8783,
+      "countryId": 840, "stateId": "49",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "Utah"
+    },
+    {
+      "name": "Capitol Reef National Park",
+      "lat": 38.367, "lon": -111.2615,
+      "countryId": 840, "stateId": "49",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "Utah"
+    },
+    {
+      "name": "Yellowstone National Park",
+      "lat": 44.428, "lon": -110.5885,
+      "countryId": 840, "stateId": "56",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "Wyoming, Montana, Idaho"
+    },
+    {
+      "name": "Yellowstone North Entrance",
+      "lat": 45.026, "lon": -110.7023,
+      "countryId": 840, "stateId": "30",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "Montana, USA"
+    },
+    {
+      "name": "Yellowstone National Park (Idaho Section)",
+      "lat": 44.427, "lon": -111.4,
+      "countryId": 840, "stateId": "16",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "Idaho, USA"
+    },
+    {
+      "name": "Grand Canyon National Park",
+      "lat": 36.1069, "lon": -112.1129,
+      "countryId": 840, "stateId": "04",
+      "color": "#4F7942", "type": "National Park",
+      "desc": "Arizona, USA"
+    },
+    {
+      "name": "Horseshoe Bend",
+      "lat": 36.8796, "lon": -111.5104,
+      "countryId": 840, "stateId": "04",
+      "color": "#4F7942", "type": "Natural Wonder",
+      "desc": "Page, Arizona, USA"
+    },
+    {
+      "name": "Antelope Canyon",
+      "lat": 36.8619, "lon": -111.3743,
+      "countryId": 840, "stateId": "04",
+      "color": "#4F7942", "type": "Natural Wonder",
+      "desc": "Page, Arizona, USA"
+    },
+    {
+      "name": "Kona, Hawaii",
+      "lat": 19.64, "lon": -155.9969,
+      "countryId": 840, "stateId": "15",
+      "color": "#C9A96E", "type": "Region",
+      "desc": "Big Island, Hawaii, USA"
+    },
+    {
+      "name": "Las Vegas, Nevada",
+      "lat": 36.1699, "lon": -115.1398,
+      "countryId": 840, "stateId": "32",
+      "color": "#C9A96E", "type": "City",
+      "desc": "Nevada, USA"
+    },
+    {
+      "name": "Richmond, Virginia",
+      "lat": 37.5407, "lon": -77.436,
+      "countryId": 840, "stateId": "51",
+      "color": "#C9A96E", "type": "City",
+      "desc": "Virginia, USA"
+    },
+    {
+      "name": "Baltimore, Maryland",
+      "lat": 39.2904, "lon": -76.6122,
+      "countryId": 840, "stateId": "24",
+      "color": "#C9A96E", "type": "City",
+      "desc": "Maryland, USA"
+    },
+    {
+      "name": "Philadelphia, Pennsylvania",
+      "lat": 39.9526, "lon": -75.1652,
+      "countryId": 840, "stateId": "42",
+      "color": "#C9A96E", "type": "City",
+      "desc": "Pennsylvania, USA"
+    },
+    {
+      "name": "Madison, Wisconsin",
+      "lat": 43.0731, "lon": -89.4012,
+      "countryId": 840, "stateId": "55",
+      "color": "#C9A96E", "type": "City",
+      "desc": "Wisconsin, USA"
+    },
+    {
+      "name": "Chicago, Illinois",
+      "lat": 41.8781, "lon": -87.6298,
+      "countryId": 840, "stateId": "17",
+      "color": "#C9A96E", "type": "City",
+      "desc": "Illinois, USA"
+    },
+    {
+      "name": "Ann Arbor, Michigan",
+      "lat": 42.2808, "lon": -83.743,
+      "countryId": 840, "stateId": "26",
+      "color": "#C9A96E", "type": "City",
+      "desc": "Michigan, USA"
+    },
+    {
+      "name": "West Lafayette, Indiana",
+      "lat": 40.4259, "lon": -86.9081,
+      "countryId": 840, "stateId": "18",
+      "color": "#C9A96E", "type": "City",
+      "desc": "Indiana, USA"
+    },
+    {
+      "name": "India Square, Jersey City",
+      "lat": 40.7307, "lon": -74.0638,
+      "countryId": 840, "stateId": "34",
+      "color": "#C9A96E", "type": "Neighborhood",
+      "desc": "Jersey City, New Jersey, USA"
+    },
+    {
+      "name": "Cleveland, Ohio",
+      "lat": 41.4993, "lon": -81.6944,
+      "countryId": 840, "stateId": "39",
+      "color": "#C9A96E", "type": "City",
+      "desc": "Ohio, USA"
+    },
+    {
+      "name": "Vancouver, Canada",
+      "lat": 49.2827, "lon": -123.1207,
+      "countryId": 124,
+      "color": "#C9A96E", "type": "City",
+      "desc": "British Columbia, Canada"
+    },
+    {
+      "name": "Niagara Falls, Canada",
+      "lat": 43.0896, "lon": -79.0849,
+      "countryId": 124,
+      "color": "#4F7942", "type": "Natural Wonder",
+      "desc": "Ontario, Canada"
+    },
+    {
+      "name": "La Bufadora",
+      "lat": 31.7246, "lon": -116.7216,
+      "countryId": 484,
+      "color": "#4F7942", "type": "Natural Wonder",
+      "desc": "Ensenada, Baja California, Mexico"
+    },
+    {
+      "name": "Punta Cana, Dominican Republic",
+      "lat": 18.5601, "lon": -68.3725,
+      "countryId": 214,
+      "color": "#C9A96E", "type": "City",
+      "desc": "La Altagracia Province, Dominican Republic"
+    },
+    {
+      "name": "Hyderabad, India",
+      "lat": 17.385, "lon": 78.4867,
+      "countryId": 356,
+      "color": "#C9A96E", "type": "City",
+      "desc": "Telangana, India"
+    },
+    {
+      "name": "Tirupati, India",
+      "lat": 13.6288, "lon": 79.4192,
+      "countryId": 356,
+      "color": "#C9A96E", "type": "City",
+      "desc": "Andhra Pradesh, India"
+    }
+  ]
+}
