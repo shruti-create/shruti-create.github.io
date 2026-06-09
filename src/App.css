@@ -702,8 +702,9 @@ body {
   border-radius: 3px;
   margin-bottom: 0.6rem;
 }
-.badge-pub    { background: #edf7ef; color: #2E7D32; border: 1px solid #A8C9B5; }
-.badge-review { background: #fdf8ed; color: #9a6d20; border: 1px solid #E8D080; }
+.badge-pub     { background: #edf7ef; color: #2E7D32; border: 1px solid #A8C9B5; }
+.badge-working { background: #eef4fb; color: #1a5276; border: 1px solid #A8C0D6; }
+.badge-review  { background: #fdf8ed; color: #9a6d20; border: 1px solid #E8D080; }
 
 .research-title {
   font-family: 'Space Grotesk', sans-serif;

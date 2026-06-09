@@ -45,13 +45,13 @@ export default function Home() {
             <div className="hero-card hc-blue">
               <div className="hc-eyebrow">Currently</div>
               <div className="hc-title">Columbia University</div>
-              <div className="hc-sub">MS Computer Science · Software Systems<br />GPA 3.89 · Expected Dec 2026</div>
+              <div className="hc-sub">MS Computer Science · Software Systems<br />GPA 3.91 · Expected Dec 2026</div>
             </div>
 
             <div className="hero-card hc-green">
               <div className="hc-eyebrow">Most Recent Internship</div>
               <div className="hc-title">ServiceNow — SWE Intern</div>
-              <div className="hc-sub">Santa Clara, CA · 2024 &amp; 2025<br />99.75% data processing reduction</div>
+              <div className="hc-sub">Santa Clara, CA · 2024, 2025 &amp; 2026<br />99.75% data processing reduction</div>
             </div>
 
             <div className="hero-card hc-gold">

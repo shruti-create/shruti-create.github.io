@@ -4,7 +4,7 @@ import * as THREE from 'three'
 
 const MENU_ITEMS = [
   { icon: '🏠', name: 'Home',           desc: 'Overview & quick facts',   path: '/' },
-  { icon: '🎓', name: 'Education',      desc: 'Columbia · UCSD · 3.89 GPA', path: '/education' },
+  { icon: '🎓', name: 'Education',      desc: 'Columbia · UCSD · 3.91 GPA', path: '/education' },
   { icon: '💼', name: 'Experience',     desc: 'ServiceNow · DEVCOM · Labs', path: '/experience' },
   { icon: '🔬', name: 'Research',       desc: 'Published · Thesis · Projects', path: '/research' },
   { icon: '📚', name: 'Teaching',       desc: 'Head TA · 6 roles',         path: '/teaching' },

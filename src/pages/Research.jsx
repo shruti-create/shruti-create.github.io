@@ -4,6 +4,7 @@ import { projects } from '../data'
 const FILTERS = [
   { id: 'all', label: 'All' },
   { id: 'published', label: 'Published' },
+  { id: 'working', label: 'Working Paper' },
   { id: 'review', label: 'Under Review' },
   { id: 'thesis', label: 'Thesis' },
   { id: 'projects', label: 'Projects' },
@@ -30,6 +31,59 @@ export default function Research() {
           </button>
         ))}
       </div>
+
+      {show('working') && (
+        <>
+        <div className="research-entry">
+          <span className="research-badge-inline badge-working">Research Project</span>
+          <h2 className="research-title">
+            Trust-Aware Orchestration Layer (TAOL) for Agentic SWE Systems
+          </h2>
+          <p className="research-journal">
+            Columbia University · Spring 2026
+          </p>
+          <p className="research-desc">
+            Designing a trust-scoring orchestration framework for multi-agent AI software engineering
+            systems. Each agent is assigned a dynamic trust score based on behavioral history, output
+            consistency, and task success rate; the orchestration layer routes tasks and enforces
+            verification checkpoints to prevent cascading failures in agentic pipelines.
+          </p>
+          <div className="research-tags">
+            <span className="research-tag">Python</span>
+            <span className="research-tag">LangChain · LangGraph</span>
+            <span className="research-tag">FastAPI · React</span>
+            <span className="research-tag">Multi-Agent Systems</span>
+          </div>
+        </div>
+
+        <div className="research-entry">
+          <span className="research-badge-inline badge-working">Working Paper</span>
+          <h2 className="research-title">
+            BEAD Funding Allocation Per Location: Technology, Geography, and Market Structure as Cost Drivers
+          </h2>
+          <p className="research-journal">
+            <strong>Prof. Henning Schulzrinne</strong> · Columbia University · Spring 2026
+          </p>
+          <p className="research-desc">
+            Analyzed what drives variation in BEAD ($42.5B federal broadband program) funding per location
+            across 2,291 ISP–state project pairs using NTIA award data. Built predictive models with
+            features including technology type, fiber infrastructure miles, and market concentration (HHI).
+            A tuned <strong>Random Forest Regressor</strong> achieved <strong>R² = 0.79</strong> (cross-validation 0.77),
+            outperforming Gradient Boosting (R² = 0.78) and linear baselines. Key finding: technology type and
+            geographic build-out costs (fiber miles per location) are the dominant cost drivers, while
+            market structure plays a secondary role — suggesting BEAD funding scales more with deployment
+            complexity than with competitive market conditions.
+          </p>
+          <div className="research-tags">
+            <span className="research-tag">Random Forest · Gradient Boosting</span>
+            <span className="research-tag">OLS · Ridge · Lasso</span>
+            <span className="research-tag">NTIA BEAD Data</span>
+            <span className="research-tag">Scikit-learn · Pandas</span>
+            <span className="research-tag">Broadband Policy · Telecom</span>
+          </div>
+        </div>
+        </>
+      )}
 
       {show('published') && (
         <div className="research-entry">
@@ -103,12 +157,13 @@ export default function Research() {
           <h2 className="inner-section-heading">ECE Honors Thesis</h2>
           <div className="research-entry" style={{ paddingTop: '1rem' }}>
             <h3 className="research-title" style={{ fontSize: '1rem' }}>
-              Project 1 — RAG System for Hospital Triaging
+              Project 1 — RAG-Based LLM Medical Referral Triage System
             </h3>
             <p className="research-desc">
-              Developing a <strong>Retrieval-Augmented Generation (RAG) system</strong> with
-              Google's Gemini to streamline hospital triaging workflows using intelligent
-              document retrieval and LLM-based reasoning.
+              Built a <strong>Retrieval-Augmented Generation system</strong> using Google Gemini to
+              automate hospital referral triage. Ingests patient notes, retrieves relevant clinical
+              guidelines via FAISS vector search, and generates structured referral recommendations
+              with confidence scores. See full writeup under Projects.
             </p>
           </div>
           <div className="research-entry" style={{ paddingTop: '1rem' }}>
@@ -116,7 +171,7 @@ export default function Research() {
               Project 2 — Infant-Caregiver Interaction Analysis
             </h3>
             <p className="research-desc">
-              Designing a <strong>camera/audio-based system</strong> to analyze infant-caregiver
+              Designed a <strong>camera/audio-based system</strong> to analyze infant-caregiver
               interactions for learning pattern analysis — combining computer vision, audio
               processing, and behavioral modeling.
             </p>

@@ -1,7 +1,7 @@
 export const stats = [
   { number: '99.75', label: 'Data Processing Reduction', suffix: '%' },
   { number: '2', label: '1st Place Projects', suffix: '' },
-  { number: '3.89', label: 'Columbia GPA', suffix: '' }
+  { number: '3.91', label: 'Columbia GPA', suffix: '' }
 ]
 
 export const quickFacts = [
@@ -34,9 +34,20 @@ export const quickFacts = [
 export const experience = [
   {
     company: 'ServiceNow',
-    role: 'Software Engineering Masters Intern',
+    role: 'Graduate Software Engineering Intern — Infrastructure Engineering',
     location: 'Santa Clara, CA',
-    period: 'September 2025',
+    period: 'June 2026 – Present',
+    color: '#62D84E',
+    highlights: [
+      'Contributing to the MID Server provisioning service by analyzing operational data and implementing tooling to improve reliability and reduce downtime across the infrastructure pipeline',
+      'Developing micro-service health monitoring and alert systems in JavaScript; collaborating with the Infrastructure Engineering team on scaling and deployment automation'
+    ]
+  },
+  {
+    company: 'ServiceNow',
+    role: 'Graduate Software Engineering Intern — Infrastructure Engineering',
+    location: 'Santa Clara, CA',
+    period: 'June – September 2025',
     color: '#62D84E',
     highlights: [
       'Built a JavaScript-based diagnostics tool to validate micro-services, API endpoints, security certificates, and JWT-based authentication in the mid-less (no MID server) data pipeline',
@@ -45,7 +56,7 @@ export const experience = [
   },
   {
     company: 'ServiceNow',
-    role: 'Software Engineering Intern',
+    role: 'Associate Software ML Engineering Intern',
     location: 'San Diego, CA',
     period: 'June – September 2024',
     color: '#62D84E',
@@ -98,7 +109,7 @@ export const education = [
     institution: 'Columbia University',
     degree: 'Master of Science, Computer Science: Software Systems Specialization',
     period: 'Expected Dec 2026',
-    notes: 'GPA: 3.89'
+    notes: 'GPA: 3.91'
   },
   {
     institution: 'University of California, San Diego',
@@ -136,6 +147,15 @@ export const leadership = [
 ]
 
 export const projects = [
+  {
+    name: 'RAG-Based LLM Medical Referral Triage System',
+    tech: 'Python, LangChain, FAISS, Google Gemini, React, FastAPI',
+    description: 'ECE Honors Thesis — UC San Diego',
+    details: 'Built a Retrieval-Augmented Generation system using Google Gemini to automate hospital referral triage. Ingests patient notes, retrieves relevant clinical guidelines via FAISS vector search, and generates structured referral recommendations with confidence scores.',
+    impact: 'Reduced simulated triage decision time by surfacing top-matched guidelines and generating draft referral summaries; validated against a curated dataset of anonymized clinical cases.',
+    link: null,
+    color: '#5B9FE3'
+  },
   {
     name: 'Solder Buddy',
     tech: 'PCB Design, React Native, XCode, Git',
