@@ -14,7 +14,7 @@ const ucsCoursework = [
 ]
 
 export default function Education() {
-  const [cwOpen, setCwOpen] = useState({ columbia: false, ucsd: false })
+  const [cwOpen, setCwOpen] = useState({ columbia: true, ucsd: true })
   const toggleCw = (key) => setCwOpen(prev => ({ ...prev, [key]: !prev[key] }))
 
   return (
@@ -24,15 +24,14 @@ export default function Education() {
       <div className="page-divider" />
 
       {/* Columbia */}
-      <div className="school-card">
-        <div className="school-card-accent" style={{ background: 'var(--navy)' }} />
-        <div className="school-card-header">
+      <details className="school-card accordion-entry" open>
+        <summary className="school-card-header">
           <div>
             <div className="school-card-name">Columbia University</div>
             <div className="school-card-location">New York, NY</div>
             <div className="school-card-period">Expected December 2026</div>
           </div>
-        </div>
+        </summary>
         <div className="school-card-body">
           <div className="school-degree-row">
             <strong>Master of Science</strong> · Computer Science: Software Systems Specialization
@@ -50,18 +49,17 @@ export default function Education() {
             </div>
           </div>
         </div>
-      </div>
+      </details>
 
       {/* UCSD */}
-      <div className="school-card">
-        <div className="school-card-accent" style={{ background: '#C69214' }} />
-        <div className="school-card-header">
+      <details className="school-card accordion-entry" open>
+        <summary className="school-card-header">
           <div>
             <div className="school-card-name">UC San Diego</div>
             <div className="school-card-location">La Jolla, CA</div>
             <div className="school-card-period">September 2022 – June 2025</div>
           </div>
-        </div>
+        </summary>
         <div className="school-card-body">
           <div className="school-degree-row">
             <strong>Bachelor of Science</strong> · Computer Engineering: <strong>ECE Honors with Distinction</strong>
@@ -85,10 +83,10 @@ export default function Education() {
             </div>
           </div>
         </div>
-      </div>
+      </details>
 
-      <div className="inner-section">
-        <h2 className="inner-section-heading">Honors &amp; Recognition</h2>
+      <details className="inner-section accordion-entry" open>
+        <summary className="inner-section-heading">Honors &amp; Recognition</summary>
         <div className="honors-two-col">
           <div className="honor-row">
             <span className="honor-accent">★</span>
@@ -115,10 +113,10 @@ export default function Education() {
             <span><strong>1st Place</strong> — IEEE Quarterly Project (Digital Puppet, Winter 2023)</span>
           </div>
         </div>
-      </div>
+      </details>
 
-      <div className="inner-section">
-        <h2 className="inner-section-heading">Leadership</h2>
+      <details className="inner-section accordion-entry" open>
+        <summary className="inner-section-heading">Leadership</summary>
         {leadership.map((l, i) => (
           <div key={i} className="lead-entry">
             <div className="lead-header">
@@ -128,10 +126,10 @@ export default function Education() {
             <p className="lead-desc">{l.achievements}</p>
           </div>
         ))}
-      </div>
+      </details>
 
-      <div className="inner-section">
-        <h2 className="inner-section-heading">Technical Skills</h2>
+      <details className="inner-section accordion-entry" open>
+        <summary className="inner-section-heading">Technical Skills</summary>
         <div className="skills-section-page">
           <div className="skill-block">
             <div className="skill-block-label">Languages</div>
@@ -158,7 +156,7 @@ export default function Education() {
             </div>
           </div>
         </div>
-      </div>
+      </details>
     </main>
   )
 }

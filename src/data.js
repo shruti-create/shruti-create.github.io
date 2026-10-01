@@ -1,7 +1,7 @@
 export const stats = [
   { number: '99.75', label: 'Data Processing Reduction', suffix: '%' },
   { number: '2', label: '1st Place Projects', suffix: '' },
-  { number: '3.91', label: 'Columbia GPA', suffix: '' }
+  { number: '3.96', label: 'Columbia GPA', suffix: '' }
 ]
 
 export const quickFacts = [
@@ -23,7 +23,7 @@ export const quickFacts = [
   },
   {
     title: 'Teaching & Mentorship',
-    desc: 'Head TA for ML for Data Science at Columbia; tutoring, teaching aide, and discussion leader roles at UCSD'
+    desc: 'Teaching roles at Columbia and UCSD, including graduate ML instruction, tutoring, project advising, and discussion leadership'
   },
   {
     title: 'Technical Focus',
@@ -109,7 +109,7 @@ export const education = [
     institution: 'Columbia University',
     degree: 'Master of Science, Computer Science: Software Systems Specialization',
     period: 'Expected Dec 2026',
-    notes: 'GPA: 3.91'
+    notes: 'GPA: 3.96'
   },
   {
     institution: 'University of California, San Diego',
@@ -196,10 +196,16 @@ export const projects = [
 
 export const teaching = [
   {
+    role: 'Teaching Assistant — Advanced Software Engineering',
+    institution: 'Columbia University',
+    period: 'Fall 2026 – Present',
+    description: 'Teaching assistant for Advanced Software Engineering during the Fall 2026 semester.'
+  },
+  {
     role: 'Head TA — Machine Learning for Data Science',
     institution: 'Columbia University',
-    period: 'Jan 2026 – Present',
-    description: 'Leading instruction for graduate-level ML for Data Science course; managing course operations and student support'
+    period: '2026',
+    description: 'Led instruction for graduate-level ML for Data Science course; managed course operations and student support'
   },
   {
     role: 'Course Assistant — Computational Genomics',

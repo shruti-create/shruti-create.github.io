@@ -23,12 +23,12 @@ export default function Travel() {
   const globeRef     = useRef()
   const containerRef = useRef()
   const [polys, setPolys]       = useState([])
-  const [sz, setSz]             = useState(580)
+  const [sz, setSz]             = useState(320)
   const [active, setActive] = useState(null)
 
   // Ocean globe material — warm ocean blue, no texture
   const globeMat = useMemo(() => new THREE.MeshPhongMaterial({
-    color:    new THREE.Color('#3A5F8A'),
+    color:    new THREE.Color('#4F6578'),
     specular: new THREE.Color('#1A2E4A'),
     shininess: 12,
   }), [])
@@ -36,7 +36,7 @@ export default function Travel() {
   // Responsive globe size
   useEffect(() => {
     const update = () => {
-      if (containerRef.current) setSz(Math.min(containerRef.current.clientWidth, 760))
+      if (containerRef.current) setSz(Math.min(containerRef.current.clientWidth, 380))
     }
     update()
     window.addEventListener('resize', update)
@@ -85,7 +85,7 @@ export default function Travel() {
       <div className="travel-header">
         <div>
           <h2 className="page-heading">Places I've Been</h2>
-          <p className="page-desc">Drag the globe · hover pins for details · visited areas glow green</p>
+          <p className="page-desc">Drag the globe · hover pins for details · visited areas glow blue</p>
         </div>
 
         <div className="travel-pct-card">
@@ -115,24 +115,24 @@ export default function Travel() {
             globeImageUrl={null}
             globeMaterial={globeMat}
             showAtmosphere
-            atmosphereColor="#C9A96E"
+            atmosphereColor="#6E8CA0"
             atmosphereAltitude={0.18}
             showGraticules
             polygonsData={polys}
             polygonCapColor={f =>
-              f.properties.visited ? 'rgba(74,124,89,0.92)' : 'rgba(196,168,130,0.78)'}
+              f.properties.visited ? 'rgba(90,130,160,0.92)' : 'rgba(214,222,230,0.78)'}
             polygonSideColor={f =>
-              f.properties.visited ? 'rgba(46,100,60,0.4)' : 'rgba(139,99,71,0.18)'}
-            polygonStrokeColor={() => 'rgba(139,99,71,0.35)'}
+              f.properties.visited ? 'rgba(45,70,90,0.45)' : 'rgba(150,165,180,0.18)'}
+            polygonStrokeColor={() => 'rgba(150,165,180,0.35)'}
             polygonAltitude={f => f.properties.visited ? 0.016 : 0.003}
             pointsData={ALL_LOCATIONS}
             pointLat={d => d.lat}
             pointLng={d => d.lon}
-            pointColor={d => '#4F7942'}
+            pointColor={d => '#3E7A4C'}
             pointAltitude={0.06}
             pointRadius={0.6}
             pointLabel={d =>
-              `<div style="background:#3D2B1F;color:#FAF4E4;padding:7px 11px;border-radius:5px;font-family:Inter,sans-serif;font-size:12px;line-height:1.5;max-width:200px">` +
+              `<div style="background:#16243D;color:var(--light-text);padding:7px 11px;border-radius:5px;font-family:Inter,sans-serif;font-size:12px;line-height:1.5;max-width:200px">` +
               `<strong>${d.name}</strong><br/>` +
               `<span style="opacity:.65;font-size:10px;text-transform:uppercase;letter-spacing:.5px">${d.type}</span><br/>` +
               `${d.desc}</div>`
@@ -152,7 +152,7 @@ export default function Travel() {
                 globeRef.current?.pointOfView({ lat: loc.lat, lng: loc.lon, altitude: 1.4 }, 800)
               }}
             >
-              <span className="travel-loc-dot" style={{ background: '#4F7942' }} />
+              <span className="travel-loc-dot" style={{ background: '#3E7A4C' }} />
               <div className="travel-loc-info">
                 <div className="travel-loc-name">{loc.name}</div>
                 <div className="travel-loc-type">{loc.type}</div>
@@ -167,11 +167,11 @@ export default function Travel() {
 
           <div className="travel-legend">
             <div className="travel-legend-row">
-              <span className="travel-legend-dot" style={{ background: 'rgba(74,124,89,0.92)' }} />
+              <span className="travel-legend-dot" style={{ background: 'rgba(90,130,160,0.92)' }} />
               Visited
             </div>
             <div className="travel-legend-row">
-              <span className="travel-legend-dot" style={{ background: '#4F7942' }} />
+              <span className="travel-legend-dot" style={{ background: '#3E7A4C' }} />
               Not yet
             </div>
           </div>
@@ -189,7 +189,7 @@ export default function Travel() {
                   className="travel-extra-item"
                   onClick={() => globeRef.current?.pointOfView({ lat: loc.lat, lng: loc.lon, altitude: 1.4 }, 800)}
                 >
-                  <span className="travel-loc-dot" style={{ background: '#4F7942'}} />
+                  <span className="travel-loc-dot" style={{ background: '#3E7A4C'}} />
                   <div className="travel-extra-info">
                     <span className="travel-extra-name">{loc.name}</span>
                     <span className="travel-extra-type">{loc.type}</span>

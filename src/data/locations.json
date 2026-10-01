@@ -241,6 +241,20 @@
       "desc": "Ohio, USA"
     },
     {
+      "name": "Seattle, Washington",
+      "lat": 47.6062, "lon": -122.3321,
+      "countryId": 840, "stateId": "53",
+      "color": "#4D6577", "type": "City",
+      "desc": "Washington, USA"
+    },
+    {
+      "name": "Raleigh, North Carolina",
+      "lat": 35.7796, "lon": -78.6382,
+      "countryId": 840, "stateId": "37",
+      "color": "#4D6577", "type": "City",
+      "desc": "North Carolina, USA"
+    },
+    {
       "name": "Vancouver, Canada",
       "lat": 49.2827, "lon": -123.1207,
       "countryId": 124,

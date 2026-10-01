@@ -1,3 +1,6 @@
+import WavingAvatar from '../components/WavingAvatar'
+import { LeftKeepsakes, RightKeepsakes } from '../components/HeroKeepsakes'
+
 export default function Home() {
   return (
     <main>
@@ -8,64 +11,47 @@ export default function Home() {
           <div className="gradient-orb orb-3" />
         </div>
 
-        <div className="hero-two-col">
-          <div className="hero-left">
-            <div className="hero-badge">
-              <span className="badge-dot" />
-              MS CS @ Columbia · New York
-            </div>
+        <div className="hero-scene">
+          <LeftKeepsakes />
+          <div className="hero-content">
+            <div className="hero-left">
+              <div className="hero-hello">
+                <span className="hero-hello-prompt" aria-hidden="true">&gt;</span>
+                Hello, world! I'm Shruti!
+              </div>
 
-            <h1 className="hero-name">Shruti<br />Bhamidipati</h1>
+              <div className="hero-intro">
+                <h1 className="hero-name">Shruti<br />Bhamidipati</h1>
+                <WavingAvatar />
+              </div>
 
-            <p className="hero-blurb">
-              I am fascinated by systems engineering, from the way complex technologies are structured
-              to the reasoning behind the architectural decisions that shape them.
-            </p>
-            <p className="hero-blurb">
-              I'm especially interested in how engineers design reliable, scalable systems
-              to solve complex problems across domains.
-            </p>
-            <p className="hero-blurb">
-              Outside of coding, I enjoy fitness, reading, and film, especially taking recommendations
-              from friends.
-            </p>
-            <p className="hero-blurb">
-              I also love teaching and mentoring. I hope to eventually spend the latter part of my career
-              helping students learn and running a small café to foster community.
-            </p>
+              <p className="hero-blurb">
+                I graduated from UC San Diego with a B.S. in Computer Engineering,
+                a B.A. in Artificial Intelligence, and a minor in Cognitive Science. I'm now pursuing an
+                M.S. in Computer Science at Columbia, specializing in Software Systems.
+              </p>
+              <p className="hero-blurb">
+                I'm drawn to the intersection of computer science and policy: how technical and policy
+                decisions shape who benefits from technology. As an NAE Global Changemakers Scholar in
+                UC San Diego's Global Ties program, I learned to start with the people and constraints
+                behind a technical problem. I carried that lesson into my master's research as first
+                author of a recently accepted paper using machine learning to study what drives funding
+                for broadband expansion under the federal BEAD program.
+              </p>
+              <p className="hero-blurb">
+                Outside of tech, I love meeting new people, exploring creative ideas, fitness, reading,
+                and film. I also love teaching and mentoring. If you'd like to collaborate on a project
+                or just connect, I'd love to hear from you!
+              </p>
 
-            <div className="hero-cta">
-              <a href="mailto:sb5197@columbia.edu" className="cta-primary">Get in Touch</a>
-              <a href="https://www.linkedin.com/in/shruti-bhamidipati/" target="_blank" rel="noopener noreferrer" className="cta-secondary">LinkedIn</a>
-              <a href="https://github.com/shruti-create" target="_blank" rel="noopener noreferrer" className="cta-secondary">GitHub</a>
-            </div>
-          </div>
-
-          <div className="hero-right">
-            <div className="hero-card hc-blue">
-              <div className="hc-eyebrow">Currently</div>
-              <div className="hc-title">Columbia University</div>
-              <div className="hc-sub">MS Computer Science · Software Systems<br />GPA 3.91 · Expected Dec 2026</div>
-            </div>
-
-            <div className="hero-card hc-green">
-              <div className="hc-eyebrow">Most Recent Internship</div>
-              <div className="hc-title">ServiceNow — SWE Intern</div>
-              <div className="hc-sub">Santa Clara, CA · 2024, 2025 &amp; 2026<br />99.75% data processing reduction</div>
-            </div>
-
-            <div className="hero-card hc-gold">
-              <div className="hc-eyebrow">Published Research</div>
-              <div className="hc-title">Journal of Physical Chemistry B</div>
-              <div className="hc-sub">Polymer Energy Simulations · 2025<br />Lipomi Lab, UCSD</div>
-            </div>
-
-            <div className="hero-card hc-teal">
-              <div className="hc-eyebrow">Teaching</div>
-              <div className="hc-title">Head TA · ML for Data Science</div>
-              <div className="hc-sub">Columbia University<br />Jan 2026 – Present</div>
+              <div className="hero-cta">
+                <a href="mailto:sb5197@columbia.edu" className="cta-primary">Get in Touch</a>
+                <a href="https://www.linkedin.com/in/shruti-bhamidipati/" target="_blank" rel="noopener noreferrer" className="cta-secondary">LinkedIn</a>
+                <a href="https://github.com/shruti-create" target="_blank" rel="noopener noreferrer" className="cta-secondary">GitHub</a>
+              </div>
             </div>
           </div>
+          <RightKeepsakes />
         </div>
 
       </section>
