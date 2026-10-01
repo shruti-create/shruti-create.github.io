@@ -40,7 +40,7 @@ export default function Home() {
               </p>
               <p className="hero-blurb">
                 Outside of tech, I love meeting new people, exploring creative ideas, fitness, reading,
-                and film. I also love teaching and mentoring. If you'd like to collaborate on a project
+                and movies. I also love teaching and mentoring. If you'd like to collaborate on a project
                 or just connect, I'd love to hear from you!
               </p>
 
