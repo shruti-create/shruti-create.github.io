@@ -59,7 +59,7 @@ export default function Research() {
           badge="Accepted Paper"
           badgeClass="badge-accepted"
           title="Universal Internet Access at What Cost? Predicting Drivers of Funding Allocation under the Broadband Equity, Access, and Deployment (BEAD) Program"
-          meta={<><strong>First author</strong> · ACM DXConf 2026 · Columbia University</>}
+          meta={<><strong>Co-first author</strong> · ACM DXConf 2026 · Columbia University</>}
         >
           <p className="research-desc">
             Used BEAD final-proposal data from 49 states and Washington, DC to study why federal broadband

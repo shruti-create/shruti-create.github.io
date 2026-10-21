@@ -34,7 +34,7 @@ export default function Home() {
                 I'm drawn to the intersection of computer science and policy: how technical and policy
                 decisions shape who benefits from technology. As an NAE Global Changemakers Scholar in
                 UC San Diego's Global Ties program, I learned to start with the people and constraints
-                behind a technical problem. I carried that lesson into my master's research as first
+                behind a technical problem. I carried that lesson into my master's research as co-first
                 author of a recently accepted paper using machine learning to study what drives funding
                 for broadband expansion under the federal BEAD program.
               </p>
