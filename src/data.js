@@ -15,7 +15,7 @@ export const quickFacts = [
   },
   {
     title: 'Industry Experience',
-    desc: 'Software Engineering Intern at ServiceNow (2024, 2025) and Senior SWE Intern at US Army DEVCOM (2023–2025)'
+    desc: 'Software Engineering Intern at ServiceNow (2024, 2025, 2026) and Senior SWE Intern at US Army DEVCOM (2023–2025)'
   },
   {
     title: 'Research',
@@ -36,7 +36,7 @@ export const experience = [
     company: 'ServiceNow',
     role: 'Graduate Software Engineering Intern — Infrastructure Engineering',
     location: 'Santa Clara, CA',
-    period: 'June 2026 – Present',
+    period: 'June – August 2026',
     color: '#62D84E',
     highlights: [
       'Contributing to the MID Server provisioning service by analyzing operational data and implementing tooling to improve reliability and reduce downtime across the infrastructure pipeline',

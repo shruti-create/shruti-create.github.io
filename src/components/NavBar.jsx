@@ -1,24 +1,31 @@
-import { NavLink } from 'react-router-dom'
+export const SECTIONS = ['home', 'education', 'experience', 'research', 'teaching']
 
-const links = ['home', 'education', 'experience', 'research', 'teaching']
-
-export default function NavBar() {
+export default function NavBar({ active }) {
   return (
     <nav className="navbar">
       <div className="nav-container">
+        <div className="nav-profile">
+          <img src="/shruti.png" alt="Shruti Bhamidipati" className="nav-photo" />
+          <span className="nav-name">Shruti Bhamidipati</span>
+          <span className="nav-school">Columbia University</span>
+        </div>
+
         <div className="nav-section">
           <span className="nav-eyebrow">Navigate</span>
           <div className="nav-links">
-            {links.map((section, i) => (
-              <NavLink
+            {SECTIONS.map((section, i) => (
+              <a
                 key={section}
-                to={section === 'home' ? '/' : `/${section}`}
-                className={({ isActive }) => isActive ? 'active' : ''}
-                end={section === 'home'}
+                href={`#${section}`}
+                className={active === section ? 'active' : ''}
+                onClick={e => {
+                  e.preventDefault()
+                  document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
+                }}
               >
                 <span className="nav-index">{String(i + 1).padStart(2, '0')}</span>
                 {section.charAt(0).toUpperCase() + section.slice(1)}
-              </NavLink>
+              </a>
             ))}
           </div>
         </div>

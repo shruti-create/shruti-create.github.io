@@ -3,7 +3,6 @@ import { projects } from '../data'
 
 const FILTERS = [
   { id: 'all', label: 'All' },
-  { id: 'accepted', label: 'Accepted' },
   { id: 'published', label: 'Published' },
   { id: 'working', label: 'Research Project' },
   { id: 'review', label: 'Under Review' },
@@ -54,28 +53,6 @@ export default function Research() {
         ))}
       </div>
 
-      {show('accepted') && (
-        <ResearchItem
-          badge="Accepted Paper"
-          badgeClass="badge-accepted"
-          title="Universal Internet Access at What Cost? Predicting Drivers of Funding Allocation under the Broadband Equity, Access, and Deployment (BEAD) Program"
-          meta={<><strong>Co-first author</strong> · ACM DXConf 2026 · Columbia University</>}
-        >
-          <p className="research-desc">
-            Used BEAD final-proposal data from 49 states and Washington, DC to study why federal broadband
-            funding varies by location. A tuned Random Forest explained 71.9% of the variation in average
-            per-location funding among the central 95% of projects, compared with about 54% for linear
-            models. Fiber miles per location and deployment technology were the strongest predictors,
-            connecting engineering requirements to broadband funding policy.
-          </p>
-          <ResearchTags tags={['Broadband Policy', 'BEAD', 'Random Forest', 'Infrastructure Funding', 'Machine Learning']} />
-          <p className="research-doi">DOI: 10.1145/3847238.3849045</p>
-          <a href="https://github.com/yusunnyf/bead_funding_predictor/tree/main" target="_blank" rel="noopener noreferrer" className="research-link">
-            View Research Code →
-          </a>
-        </ResearchItem>
-      )}
-
       {show('working') && (
         <ResearchItem
           badge="Research Project"
@@ -97,6 +74,31 @@ export default function Research() {
         <ResearchItem
           badge="Published"
           badgeClass="badge-pub"
+          title="Universal Internet Access at What Cost? Predicting Drivers of Funding Allocation under the Broadband Equity, Access, and Deployment (BEAD) Program"
+          meta={<><strong>Co-first author</strong> · ACM DXConf 2026 (presented) · Columbia University</>}
+        >
+          <p className="research-desc">
+            Used BEAD final-proposal data from 49 states and Washington, DC to study why federal broadband
+            funding varies by location. A tuned Random Forest explained 71.9% of the variation in average
+            per-location funding among the central 95% of projects, compared with about 54% for linear
+            models. Fiber miles per location and deployment technology were the strongest predictors,
+            connecting engineering requirements to broadband funding policy.
+          </p>
+          <ResearchTags tags={['Broadband Policy', 'BEAD', 'Random Forest', 'Infrastructure Funding', 'Machine Learning']} />
+          <p className="research-doi">DOI: 10.1145/3847238.3849045</p>
+          <a href="/papers/bead-acm-dxconf-2026.pdf" target="_blank" rel="noopener noreferrer" className="research-link">
+            Read Paper (PDF) →
+          </a>
+          <a href="https://github.com/yusunnyf/bead_funding_predictor/tree/main" target="_blank" rel="noopener noreferrer" className="research-link">
+            View Research Code →
+          </a>
+        </ResearchItem>
+      )}
+
+      {show('published') && (
+        <ResearchItem
+          badge="Published"
+          badgeClass="badge-pub"
           title="Polymer Energy Simulations — Electron Delocalization in Conjugated Polymers"
           meta={<><strong>Journal of Physical Chemistry B</strong> · American Chemical Society · 2025 · Lipomi Lab, UCSD</>}
         >
@@ -111,6 +113,9 @@ export default function Research() {
           <ResearchTags tags={['React / Django', 'Plotly.js · Three.js', 'AICD · QChem', 'Blender · ChimeraX', 'Computational Chemistry']} />
           <a href="https://pubs.acs.org/doi/10.1021/acs.jpcb.5c02849" target="_blank" rel="noopener noreferrer" className="research-link">
             Read Publication →
+          </a>
+          <a href="/papers/polymer-jpcb-acs-2025.pdf" target="_blank" rel="noopener noreferrer" className="research-link">
+            Read Paper (PDF) →
           </a>
         </ResearchItem>
       )}
