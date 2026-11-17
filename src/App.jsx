@@ -49,12 +49,7 @@ function App() {
           )
         })}
       </main>
-      {import.meta.env.VITE_VISITOR_LOG_URL && (
-        <footer className="visitor-notice">
-          This site uses IPWhois to estimate location and records visit time, IP address, and approximate city, region, and country for site analytics.
-          To request deletion, email <a href="mailto:sb5197@columbia.edu">sb5197@columbia.edu</a>.
-        </footer>
-      )}
+     
     </div>
   )
 }
