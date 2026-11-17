@@ -1,8 +1,28 @@
+import { useEffect, useRef } from 'react'
 import { SECTIONS } from '../sections'
 
 export default function NavBar({ active }) {
+  const navRef = useRef(null)
+
+  useEffect(() => {
+    const nav = navRef.current
+    if (!nav) return
+
+    const updateHeight = () => {
+      document.documentElement.style.setProperty('--header-height', `${nav.getBoundingClientRect().height}px`)
+    }
+    const observer = new ResizeObserver(updateHeight)
+    observer.observe(nav)
+    updateHeight()
+
+    return () => {
+      observer.disconnect()
+      document.documentElement.style.removeProperty('--header-height')
+    }
+  }, [])
+
   return (
-    <nav className="navbar">
+    <nav className="navbar" ref={navRef}>
       <div className="nav-container">
         <a className="nav-name" href="#home">Shruti Bhamidipati</a>
 
