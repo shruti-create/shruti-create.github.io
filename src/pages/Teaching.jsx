@@ -18,16 +18,19 @@ export default function Teaching() {
   })
 
   return (
-    <main className="page-wrap">
-      <h1 className="page-heading">Teaching &amp; Mentorship</h1>
-      <p className="page-desc">Selected instruction, tutoring, and advising roles across Columbia and UCSD.</p>
-      <div className="page-divider" />
+    <div className="page-wrap">
+      <div className="section-intro">
+        <h2 className="page-heading">Teaching &amp; Mentorship</h2>
+        <p className="page-desc">Selected instruction, tutoring, and advising roles across Columbia and UCSD.</p>
+      </div>
+      <div className="section-content">
 
       <div className="filter-bar">
         {FILTERS.map(f => (
           <button
             key={f.id}
             className={`filter-pill${filter === f.id ? ' fp-active' : ''}`}
+            aria-pressed={filter === f.id}
             onClick={() => setFilter(f.id)}
           >
             {f.label}
@@ -37,9 +40,6 @@ export default function Teaching() {
 
       {filtered.map(t => {
         const isActive = t.period.includes('Present')
-        const isColumbia = t.institution.includes('Columbia')
-        const accentColor = isColumbia ? 'var(--blue)' : '#C69214'
-
         return (
           <details key={`${t.role}-${t.institution}`} className="teaching-card accordion-entry">
             <summary className="teaching-card-summary">
@@ -53,7 +53,7 @@ export default function Teaching() {
                 <span className="teaching-role">{t.role}</span>
                 <span className="teaching-period">{t.period}</span>
               </span>
-              <span className="teaching-inst" style={{ color: accentColor }}>{t.institution}</span>
+              <span className="teaching-inst">{t.institution}</span>
             </summary>
             <div className="teaching-card-body">
               <p className="teaching-desc">{t.description}</p>
@@ -61,6 +61,7 @@ export default function Teaching() {
           </details>
         )
       })}
-    </main>
+      </div>
+    </div>
   )
 }

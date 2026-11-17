@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
-import NavBar, { SECTIONS } from './components/NavBar'
+import './portfolio.css'
+import NavBar from './components/NavBar'
+import { SECTIONS } from './sections'
 import Home from './pages/Home'
 import Education from './pages/Education'
 import Experience from './pages/Experience'
@@ -10,14 +12,7 @@ import Teaching from './pages/Teaching'
 const PAGES = { home: Home, education: Education, experience: Experience, research: Research, teaching: Teaching }
 
 function App() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [active, setActive] = useState('home')
-
-  useEffect(() => {
-    const handleMouseMove = e => setMousePosition({ x: e.clientX, y: e.clientY })
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
 
   // Scroll-spy: highlight the nav link for the section in view
   useEffect(() => {
@@ -32,7 +27,7 @@ function App() {
     return () => observer.disconnect()
   }, [])
 
-  // Old links like /#/research now scroll to the matching section
+  // Support links to sections, including older /#/research links.
   useEffect(() => {
     const id = window.location.hash.replace(/^#\/?/, '')
     if (SECTIONS.includes(id)) document.getElementById(id)?.scrollIntoView()
@@ -40,14 +35,8 @@ function App() {
 
   return (
     <div className="app">
-      <div
-        className="cursor-glow"
-        style={{ left: mousePosition.x, top: mousePosition.y }}
-      />
-
       <NavBar active={active} />
-
-      <div className="page-content">
+      <main className="page-content">
         {SECTIONS.map(id => {
           const Page = PAGES[id]
           return (
@@ -56,7 +45,7 @@ function App() {
             </section>
           )
         })}
-      </div>
+      </main>
     </div>
   )
 }

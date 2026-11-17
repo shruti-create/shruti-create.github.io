@@ -4,22 +4,22 @@
 
 html {
   font-size: 16px;
-  background: #FCEEF2;
+  background: #fff;
   scroll-behavior: smooth;
   overflow-y: scroll;
 }
 
 /* Always-visible page scrollbar on the right */
 html::-webkit-scrollbar { width: 12px; }
-html::-webkit-scrollbar-track { background: #F7DFE8; }
+html::-webkit-scrollbar-track { background: #fff; }
 html::-webkit-scrollbar-thumb {
   background: var(--blue);
   border-radius: 8px;
-  border: 3px solid #F7DFE8;
+  border: 3px solid #fff;
 }
 html::-webkit-scrollbar-thumb:hover { background: var(--dark-blue); }
 @supports (-moz-appearance: none) {
-  html { scrollbar-color: #4D6577 #F7DFE8; }
+  html { scrollbar-color: #4D6577 #fff; }
 }
 
 .page-section { scroll-margin-top: 0; }
@@ -33,8 +33,8 @@ html::-webkit-scrollbar-thumb:hover { background: var(--dark-blue); }
   --green:      #3E7A4C;   /* muted green */
   --gold:       #B8924F;   /* muted brass/amber */
   --teal:       #4A7680;   /* grayed blue-teal accent */
-  --off-white:  #FFF7FA;   /* softly tinted card surfaces */
-  --light-text: #FCEEF2;   /* text on dark surfaces */
+  --off-white:  #fff;
+  --light-text: #fff;
   --text:       #24303D;   /* dark slate charcoal */
   --text-mid:   #56687A;   /* slate gray-blue */
   --border:     #D6DEE6;   /* cool light gray-blue */
@@ -44,10 +44,10 @@ html::-webkit-scrollbar-thumb:hover { background: var(--dark-blue); }
 
 body {
   font-family: 'Inter', -apple-system, sans-serif;
-  background: #FCEEF2;
+  background: #fff;
   color: var(--text);
   overflow-x: hidden;
-  line-height: 1.72;
+  line-height: 1.5;
 }
 
 .app {
@@ -1538,3 +1538,161 @@ body {
 @media (max-width: 800px) {
   .travel-extra-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* Single continuous page */
+.app { display: block; background: #fff; }
+.navbar {
+  position: sticky;
+  top: 0;
+  bottom: auto;
+  width: 100%;
+  padding: 0.65rem clamp(1rem, 4vw, 2rem);
+  background: #fff;
+  border-right: 0;
+  border-bottom: 1px solid var(--border);
+  overflow: visible;
+}
+.nav-container {
+  max-width: 1000px;
+  height: auto;
+  margin: auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.nav-name {
+  flex: 0 0 auto;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.nav-section { width: auto; }
+.nav-links { flex-direction: row; flex-wrap: wrap; gap: 0.15rem; width: auto; }
+.nav-links a {
+  width: auto;
+  border: 0;
+  border-radius: 4px;
+  padding: 0.35rem 0.55rem;
+  color: var(--text-mid);
+  white-space: nowrap;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--navy); background: #f2f5f7; border: 0; }
+.nav-contact { color: var(--blue); font-size: 0.8rem; font-weight: 700; text-decoration: none; }
+.nav-contact:hover { text-decoration: underline; }
+
+.page-content { margin: 0; padding: 0; display: block; }
+.page-section { display: block; scroll-margin-top: 4rem; }
+.page-section + .page-section { border-top: 1px solid var(--border); }
+#home { min-height: 0; }
+.page-section > main { display: block; }
+.hero-epic {
+  min-height: 0;
+  padding: 2.25rem 1.5rem 2rem;
+  background: #fff;
+}
+.hero-background, .hero-keepsakes, .cursor-glow { display: none; }
+.hero-scene { display: block; max-width: 880px; }
+.hero-content { animation: none; }
+.hero-hello { margin-bottom: 0.65rem; }
+.hero-intro { margin-bottom: 0.6rem; }
+.hero-blurb { line-height: 1.5; margin-bottom: 0.5rem; }
+.hero-cta { margin-top: 0.9rem; }
+
+.page-wrap { padding: 1.7rem 1.5rem 2rem; animation: none; }
+.page-heading { font-size: 1.75rem; line-height: 1.2; margin-bottom: 0.2rem; }
+.page-desc { margin-bottom: 0.65rem; }
+.page-divider { margin-bottom: 1rem; }
+.filter-bar { margin-bottom: 0.9rem; }
+.school-card { padding: 0.75rem 0; }
+.school-card[open] .school-card-header { margin-bottom: 0.45rem; }
+.school-card-name { font-size: 1.35rem; }
+.school-degree-row { line-height: 1.45; margin-bottom: 0.15rem; }
+.coursework-block { margin-top: 0.5rem !important; gap: 0.35rem; }
+.coursework-pills { margin-top: 0.35rem !important; }
+.inner-section.accordion-entry { padding: 0.75rem 0; }
+.inner-section.accordion-entry[open] > .inner-section-heading { margin-bottom: 0.45rem; }
+.honor-row { padding: 0.2rem 0; line-height: 1.45; }
+.lead-entry { padding: 0.55rem 0; }
+.skill-block { margin-bottom: 0.55rem; }
+.exp-tl-item { padding-bottom: 0.75rem; margin-bottom: 0.75rem; }
+.exp-tl-bullets li { line-height: 1.45; margin-bottom: 0.2rem; }
+.exp-tl-dot { border-color: #fff; }
+.research-entry { padding: 0.8rem 0; }
+.research-group { margin-top: 1rem; }
+.research-body { padding-top: 0.5rem; }
+.research-desc { line-height: 1.5; margin-bottom: 0.4rem; }
+.research-tags { margin-bottom: 0.45rem; }
+.teaching-card { padding: 0.8rem 0; }
+
+@media (max-width: 900px) {
+  .navbar { position: sticky; width: 100%; padding: 0.55rem 1rem; }
+  .nav-container { flex-wrap: wrap; justify-content: center; gap: 0.25rem 0.8rem; }
+  .nav-name { display: block; }
+  .nav-contact { display: block; }
+  .nav-section { order: 3; width: 100%; overflow-x: auto; }
+  .nav-links { flex-wrap: nowrap; justify-content: center; }
+  .page-content { padding: 0; }
+  .page-section { scroll-margin-top: 6.5rem; }
+}
+@media (max-width: 640px) {
+  .hero-epic { padding: 1.5rem 1.2rem; }
+  .page-wrap { padding: 1.4rem 1.2rem 1.7rem; }
+  .nav-links { justify-content: flex-start; }
+  .hero-name { font-size: 2rem; }
+}
+
+/* Plain text presentation: no cards, rules, or decorative lines. */
+.navbar, .page-section + .page-section,
+.school-card, .inner-section.accordion-entry, .lead-entry,
+.exp-tl-item, .research-entry, .teaching-card,
+.project-entry, .edu-entry-page, .teaching-entry,
+.home-section, .edu-entry-home + .edu-entry-home,
+.skill-row, .inner-section-heading {
+  border: 0;
+}
+.page-divider, .exp-timeline::before, .exp-tl-dot,
+.section-eyebrow::after, .exp-company-rule { display: none; }
+.exp-timeline { padding-left: 0; }
+.exp-tl-item { margin-bottom: 0.65rem; padding-bottom: 0.35rem; }
+.accordion-entry > summary::after { display: none; }
+.accordion-entry > summary { padding-right: 0; }
+.inner-section-heading { padding-left: 0; padding-bottom: 0; }
+.inner-section.accordion-entry > .inner-section-heading { padding-right: 0; }
+.page-desc { margin-bottom: 0.45rem; }
+.page-wrap { padding-top: 1.2rem; padding-bottom: 1.3rem; }
+.hero-epic { padding-bottom: 1.3rem; }
+.school-card, .research-entry, .teaching-card { padding: 0.55rem 0; }
+
+.hero-hello, .cta-primary, .cta-secondary,
+.coursework-pill, .skill-pill-sm, .skill-tag,
+.research-tag, .project-tech-tag, .filter-pill,
+.project-entry {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.hero-hello { padding: 0; }
+.cta-primary, .cta-secondary { padding: 0; color: var(--blue); font-weight: 600; }
+.cta-primary:hover, .cta-secondary:hover { background: none; transform: none; text-decoration: underline; }
+.hero-cta { gap: 1.2rem; }
+.coursework-pill, .skill-pill-sm, .skill-tag,
+.research-tag, .project-tech-tag { padding: 0; margin-right: 0.25rem; }
+.skill-pill-row, .coursework-pills, .research-tags,
+.project-tech-tags { column-gap: 0.4rem; row-gap: 0.15rem; }
+.skill-tag:hover { background: none; color: var(--blue); }
+.filter-pill { padding: 0.15rem 0.35rem; }
+.filter-pill.fp-active { background: none; border: 0; color: var(--navy); font-weight: 800; }
+.project-entry { padding: 0.6rem 0; margin-bottom: 0.5rem; }
+.project-entry:hover { transform: none; box-shadow: none; }
+.nav-links a:hover, .nav-links a.active { background: none; }
+
+@media (max-width: 640px) {
+  .page-wrap { padding-top: 1.1rem; padding-bottom: 1.2rem; }
+}
+
+/* Use more of the available desktop width. */
+.nav-container, .page-wrap, .hero-scene { max-width: 1200px; }
+.hero-intro, .hero-blurb { max-width: 1100px; }

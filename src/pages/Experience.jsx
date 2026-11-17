@@ -2,12 +2,13 @@ import { experience } from '../data'
 
 export default function Experience() {
   return (
-    <main className="page-wrap">
-      <h1 className="page-heading">Experience</h1>
-      <p className="page-desc">Professional roles, research positions, and internships.</p>
-      <div className="page-divider" />
+    <div className="page-wrap">
+      <div className="section-intro">
+        <h2 className="page-heading">Experience</h2>
+        <p className="page-desc">Professional roles, research positions, and internships.</p>
+      </div>
 
-      <div className="exp-timeline">
+      <div className="section-content exp-timeline">
         {experience.map((role, i) => (
           <div key={i} className="exp-tl-item">
             <div
@@ -40,6 +41,6 @@ export default function Experience() {
           </div>
         ))}
       </div>
-    </main>
+    </div>
   )
 }

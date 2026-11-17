@@ -36,16 +36,19 @@ export default function Research() {
   const show = category => filter === 'all' || filter === category
 
   return (
-    <main className="page-wrap">
-      <h1 className="page-heading">Research &amp; Projects</h1>
-      <p className="page-desc">Publications, academic research, and selected builds.</p>
-      <div className="page-divider" />
+    <div className="page-wrap">
+      <div className="section-intro">
+        <h2 className="page-heading">Research &amp; Projects</h2>
+        <p className="page-desc">Publications, academic research, and selected builds.</p>
+      </div>
+      <div className="section-content">
 
       <div className="filter-bar">
         {FILTERS.map(f => (
           <button
             key={f.id}
             className={`filter-pill${filter === f.id ? ' fp-active' : ''}`}
+            aria-pressed={filter === f.id}
             onClick={() => setFilter(f.id)}
           >
             {f.label}
@@ -180,6 +183,7 @@ export default function Research() {
           ))}
         </section>
       )}
-    </main>
+      </div>
+    </div>
   )
 }

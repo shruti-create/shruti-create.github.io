@@ -14,14 +14,16 @@ const ucsCoursework = [
 ]
 
 export default function Education() {
-  const [cwOpen, setCwOpen] = useState({ columbia: true, ucsd: true })
+  const [cwOpen, setCwOpen] = useState({ columbia: false, ucsd: false })
   const toggleCw = (key) => setCwOpen(prev => ({ ...prev, [key]: !prev[key] }))
 
   return (
-    <main className="page-wrap">
-      <h1 className="page-heading">Education</h1>
-      <p className="page-desc">Degrees, honors, leadership, and technical skills.</p>
-      <div className="page-divider" />
+    <div className="page-wrap">
+      <div className="section-intro">
+        <h2 className="page-heading">Education</h2>
+        <p className="page-desc">Degrees, honors, leadership, and technical skills.</p>
+      </div>
+      <div className="section-content">
 
       {/* Columbia */}
       <details className="school-card accordion-entry" open>
@@ -37,12 +39,12 @@ export default function Education() {
             <strong>Master of Science</strong> · Computer Science: Software Systems Specialization
           </div>
           <div className="coursework-block" style={{ marginTop: '1.1rem' }}>
-            <button className="cw-toggle" onClick={() => toggleCw('columbia')}>
+            <button className="cw-toggle" aria-expanded={cwOpen.columbia} aria-controls="columbia-coursework" onClick={() => toggleCw('columbia')}>
               <span>Coursework</span>
               <span className={`cw-chevron${cwOpen.columbia ? ' open' : ''}`}>▶</span>
               <span className="cw-count">({columbiaCoursework.length})</span>
             </button>
-            <div className={`cw-pills-wrap${cwOpen.columbia ? ' open' : ' closed'}`}>
+            <div id="columbia-coursework" hidden={!cwOpen.columbia} className={`cw-pills-wrap${cwOpen.columbia ? ' open' : ' closed'}`}>
               <div className="coursework-pills" style={{ marginTop: '0.6rem' }}>
                 {columbiaCoursework.map(c => <span key={c} className="coursework-pill">{c}</span>)}
               </div>
@@ -71,12 +73,12 @@ export default function Education() {
             Minor in Cognitive Science &nbsp;·&nbsp; <strong>NAE Grand Challenges Scholar</strong> &nbsp;·&nbsp; <strong>IEEE Eta Kappa Nu</strong>
           </div>
           <div className="coursework-block" style={{ marginTop: '1.1rem' }}>
-            <button className="cw-toggle" onClick={() => toggleCw('ucsd')}>
+            <button className="cw-toggle" aria-expanded={cwOpen.ucsd} aria-controls="ucsd-coursework" onClick={() => toggleCw('ucsd')}>
               <span>Coursework</span>
               <span className={`cw-chevron${cwOpen.ucsd ? ' open' : ''}`}>▶</span>
               <span className="cw-count">({ucsCoursework.length})</span>
             </button>
-            <div className={`cw-pills-wrap${cwOpen.ucsd ? ' open' : ' closed'}`}>
+            <div id="ucsd-coursework" hidden={!cwOpen.ucsd} className={`cw-pills-wrap${cwOpen.ucsd ? ' open' : ' closed'}`}>
               <div className="coursework-pills" style={{ marginTop: '0.6rem' }}>
                 {ucsCoursework.map(c => <span key={c} className="coursework-pill">{c}</span>)}
               </div>
@@ -85,7 +87,7 @@ export default function Education() {
         </div>
       </details>
 
-      <details className="inner-section accordion-entry" open>
+      <details className="inner-section accordion-entry">
         <summary className="inner-section-heading">Honors &amp; Recognition</summary>
         <div className="honors-two-col">
           <div className="honor-row">
@@ -115,7 +117,7 @@ export default function Education() {
         </div>
       </details>
 
-      <details className="inner-section accordion-entry" open>
+      <details className="inner-section accordion-entry">
         <summary className="inner-section-heading">Leadership</summary>
         {leadership.map((l, i) => (
           <div key={i} className="lead-entry">
@@ -128,7 +130,7 @@ export default function Education() {
         ))}
       </details>
 
-      <details className="inner-section accordion-entry" open>
+      <details className="inner-section accordion-entry">
         <summary className="inner-section-heading">Technical Skills</summary>
         <div className="skills-section-page">
           <div className="skill-block">
@@ -157,6 +159,7 @@ export default function Education() {
           </div>
         </div>
       </details>
-    </main>
+      </div>
+    </div>
   )
 }

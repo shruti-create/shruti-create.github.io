@@ -128,7 +128,7 @@ export default function Travel() {
             pointsData={ALL_LOCATIONS}
             pointLat={d => d.lat}
             pointLng={d => d.lon}
-            pointColor={d => '#3E7A4C'}
+            pointColor={() => '#3E7A4C'}
             pointAltitude={0.06}
             pointRadius={0.6}
             pointLabel={d =>
