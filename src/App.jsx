@@ -8,11 +8,14 @@ import Education from './pages/Education'
 import Experience from './pages/Experience'
 import Research from './pages/Research'
 import Teaching from './pages/Teaching'
+import { recordVisit } from './visitAnalytics'
 
 const PAGES = { home: Home, education: Education, experience: Experience, research: Research, teaching: Teaching }
 
 function App() {
   const [active, setActive] = useState('home')
+
+  useEffect(() => { recordVisit() }, [])
 
   // Scroll-spy: highlight the nav link for the section in view
   useEffect(() => {
@@ -46,6 +49,12 @@ function App() {
           )
         })}
       </main>
+      {import.meta.env.VITE_VISITOR_LOG_URL && (
+        <footer className="visitor-notice">
+          This site uses IPWhois to estimate location and records visit time, IP address, and approximate city, region, and country for site analytics.
+          To request deletion, email <a href="mailto:sb5197@columbia.edu">sb5197@columbia.edu</a>.
+        </footer>
+      )}
     </div>
   )
 }
