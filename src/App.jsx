@@ -8,14 +8,11 @@ import Education from './pages/Education'
 import Experience from './pages/Experience'
 import Research from './pages/Research'
 import Teaching from './pages/Teaching'
-import { recordVisit } from './visitAnalytics'
 
 const PAGES = { home: Home, education: Education, experience: Experience, research: Research, teaching: Teaching }
 
 function App() {
   const [active, setActive] = useState('home')
-
-  useEffect(() => { recordVisit() }, [])
 
   // Scroll-spy: highlight the nav link for the section in view
   useEffect(() => {
@@ -49,7 +46,6 @@ function App() {
           )
         })}
       </main>
-     
     </div>
   )
 }
